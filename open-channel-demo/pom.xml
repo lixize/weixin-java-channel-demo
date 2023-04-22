@@ -2,23 +2,55 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.github.binarywang</groupId>
+  <parent>
+    <groupId>com.github.binarywang</groupId>
+    <artifactId>weixin-java-channel-demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
   <artifactId>open-channel-demo</artifactId>
+  <name>open-channel-demo</name>
+  <description>第三方平台接入的视频号小店Demo</description>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>open-channel-demo</name>
-  <url>http://maven.apache.org</url>
-
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <!-- 引入视频号相关依赖 -->
+    <dependency>
+      <groupId>com.github.binarywang</groupId>
+      <artifactId>weixin-java-open</artifactId>
+      <version>${wxjava.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.binarywang</groupId>
+      <artifactId>weixin-java-channel</artifactId>
+      <version>${wxjava.version}</version>
+    </dependency>
+
+    <!-- 消息处理必须 -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.dataformat</groupId>
+      <artifactId>jackson-dataformat-xml</artifactId>
+    </dependency>
+
+    <!--Redis-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>

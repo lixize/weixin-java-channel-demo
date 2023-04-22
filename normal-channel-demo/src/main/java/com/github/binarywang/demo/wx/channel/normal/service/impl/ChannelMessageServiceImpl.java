@@ -4,7 +4,6 @@ package com.github.binarywang.demo.wx.channel.normal.service.impl;
 import com.github.binarywang.demo.wx.channel.normal.service.ChannelMessageService;
 import java.util.HashSet;
 import java.util.Set;
-import javax.annotation.Resource;
 import me.chanjar.weixin.channel.api.WxChannelService;
 import me.chanjar.weixin.channel.api.impl.BaseWxChannelMessageServiceImpl;
 import me.chanjar.weixin.channel.config.WxChannelConfig;
@@ -17,6 +16,7 @@ import me.chanjar.weixin.channel.util.XmlUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -27,10 +27,10 @@ public class ChannelMessageServiceImpl extends BaseWxChannelMessageServiceImpl i
 
     private static final Logger logger = LoggerFactory.getLogger(ChannelMessageServiceImpl.class);
 
-    @Resource
+    @Autowired
     private WxChannelService wxChannelService;
 
-    @Resource
+    @Autowired
     private WxChannelConfig wxChannelConfig;
 
     public ChannelMessageServiceImpl(WxChannelMessageRouter router) {

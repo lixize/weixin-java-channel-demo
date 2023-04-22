@@ -21,21 +21,11 @@
         <module>open-channel-demo</module>
         <module>normal-channel-demo</module>
     </modules>
+
     <properties>
         <java.version>1.8</java.version>
+        <wxjava.version>4.4.9.Y</wxjava.version>
     </properties>
-
-    <repositories>
-        <repository>
-            <id>public</id>
-            <name>aliyun maven</name>
-            <url>http://maven.monda.lo:8081/repository/maven-public/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
 
     <dependencyManagement>
 

@@ -1,0 +1,37 @@
+server:
+  port: 12003
+
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    com.github.binarywang.demo.channel.open: DEBUG
+
+wx:
+  open:
+    componentAppId: ""
+    componentSecret: ""
+    componentToken: ""
+    componentAesKey: ""
+  channel:
+    appid: ""
+  # 自动化测试的专用测试号
+  test:
+    # 公众号
+    mp-app-ids:
+      - wx570bc396a51b8ff8
+      - wx9252c5e0bb1836fc
+      - wx8e1097c5bc82cde9
+      - wx14550af28c71a144
+      - wxa35b9c23cfe664eb
+    # 小程序
+    ma-app-ids:
+      - wxd101a85aa106f53e
+      - wxc39235c15087f6f3
+      - wx7720d01d4b2a4500
+      - wx05d483572dcd5d8b
+      - wx5910277cae6fd970

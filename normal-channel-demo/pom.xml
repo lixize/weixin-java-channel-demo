@@ -27,7 +27,7 @@
         <dependency>
             <groupId>com.github.binarywang</groupId>
             <artifactId>weixin-java-channel</artifactId>
-            <version>4.4.9.Y</version>
+            <version>${wxjava.version}</version>
         </dependency>
 
         <!-- 消息处理必须 -->
