@@ -1,0 +1,18 @@
+server:
+  port: 12001
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    com.github.binarywang.demo.channel.open: DEBUG
+wx:
+  channel:
+    appid: ""
+    secret: ""
+    token: ""
+    aesKey: ""
+    msgDataFormat: JSON
+    config-storage:
+      redis:
+        host: "127.0.0.1"
+        port: 6379

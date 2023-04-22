@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.11</version>
+    </parent>
+
+    <groupId>com.github.binarywang</groupId>
+    <artifactId>weixin-java-channel-demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>weixin-java-channel-demo</name>
+    <description>WxJava视频号相关代码Demo</description>
+
+    <modules>
+        <module>starter-channel-demo</module>
+        <module>open-channel-demo</module>
+    </modules>
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>aliyun maven</name>
+            <url>http://maven.monda.lo:8081/repository/maven-public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <dependencyManagement>
+
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <!-- 版本控制 -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.7</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
