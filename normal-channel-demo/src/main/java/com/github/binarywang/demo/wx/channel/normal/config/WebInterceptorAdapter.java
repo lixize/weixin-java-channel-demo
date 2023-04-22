@@ -1,4 +1,4 @@
-package com.github.binarywang.demo.wx.channel.starter.config;
+package com.github.binarywang.demo.wx.channel.normal.config;
 
 import java.util.List;
 import org.springframework.context.annotation.Configuration;
@@ -9,8 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
  * 解决引入jackson-dataformat-xml导致的xml转换问题
  *
- * @author LiXiZe
- * @date 2023-04-21
+ * @author <a href="https://github.com/lixize">Zeyes</a>
  */
 @Configuration
 public class WebInterceptorAdapter implements WebMvcConfigurer {

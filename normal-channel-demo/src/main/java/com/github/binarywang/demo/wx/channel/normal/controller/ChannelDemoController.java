@@ -1,8 +1,9 @@
-package com.github.binarywang.demo.wx.channel.starter.controller;
+package com.github.binarywang.demo.wx.channel.normal.controller;
 
-import com.github.binarywang.demo.wx.channel.starter.common.Result;
-import com.github.binarywang.demo.wx.channel.starter.vo.ShopInfoVo;
-import com.github.binarywang.demo.wx.channel.starter.service.ChannelApiService;
+
+import com.github.binarywang.demo.wx.channel.normal.common.Result;
+import com.github.binarywang.demo.wx.channel.normal.service.ChannelApiService;
+import com.github.binarywang.demo.wx.channel.normal.vo.ShopInfoVo;
 import me.chanjar.weixin.channel.util.XmlUtils;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

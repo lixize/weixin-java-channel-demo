@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
@@ -7,11 +9,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>starter-channel-demo</artifactId>
-    <packaging>jar</packaging>
-
-    <name>starter-channel-demo</name>
-    <description>starter接入的视频号小店Demo</description>
+    <artifactId>normal-channel-demo</artifactId>
+    <name>normal-channel-demo</name>
+    <description>正常接入的视频号小店Demo</description>
 
     <properties>
 
@@ -26,7 +26,7 @@
         <!-- 引入视频号相关依赖 -->
         <dependency>
             <groupId>com.github.binarywang</groupId>
-            <artifactId>wx-java-channel-spring-boot-starter</artifactId>
+            <artifactId>weixin-java-channel</artifactId>
             <version>4.4.9.Y</version>
         </dependency>
 
@@ -57,4 +57,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

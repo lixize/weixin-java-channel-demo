@@ -19,6 +19,7 @@
     <modules>
         <module>starter-channel-demo</module>
         <module>open-channel-demo</module>
+        <module>normal-channel-demo</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

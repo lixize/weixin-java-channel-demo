@@ -1,6 +1,11 @@
 server:
   port: 12001
 
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
 logging:
   level:
     org.springframework.web: DEBUG
@@ -13,6 +18,4 @@ wx:
     aesKey: ""
     msgDataFormat: JSON
     config-storage:
-      redis:
-        host: "127.0.0.1"
-        port: 6379
+      type: redistemplate
