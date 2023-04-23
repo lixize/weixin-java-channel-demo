@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  *
  * @author <a href="https://github.com/lixize">Zeyes</a>
  */
-@Configuration
+//@Configuration
 public class WebInterceptorAdapter implements WebMvcConfigurer {
 
     @Override

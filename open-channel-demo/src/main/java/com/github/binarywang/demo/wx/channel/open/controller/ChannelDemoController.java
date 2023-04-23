@@ -1,9 +1,9 @@
 package com.github.binarywang.demo.wx.channel.open.controller;
 
 
-import com.github.binarywang.demo.wx.channel.normal.common.Result;
-import com.github.binarywang.demo.wx.channel.normal.service.ChannelApiService;
-import com.github.binarywang.demo.wx.channel.normal.vo.ShopInfoVo;
+import com.github.binarywang.demo.wx.channel.open.common.Result;
+import com.github.binarywang.demo.wx.channel.open.service.ChannelApiService;
+import com.github.binarywang.demo.wx.channel.open.vo.ShopInfoVo;
 import me.chanjar.weixin.channel.util.XmlUtils;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,6 @@ public class ChannelDemoController {
      */
     @GetMapping("/shopInfo")
     public Result<ShopInfoVo> getShopInfo() {
-        XmlUtils.decode("<xml></xml>", ShopInfoVo.class);
         return Result.success(channelApiService.getShopInfo());
     }
 }

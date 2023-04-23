@@ -23,7 +23,7 @@ public interface OpenMessageService {
      * @param requestBody    请求体
      * @param timestamp      时间戳
      * @param nonce          随机串
-     * @param signature      前面
+     * @param signature      签名
      * @param encType        加密类型
      * @param msgSignature   消息签名
      * @return String

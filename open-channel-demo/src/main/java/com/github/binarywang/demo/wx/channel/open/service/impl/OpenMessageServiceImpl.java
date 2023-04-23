@@ -1,6 +1,7 @@
 package com.github.binarywang.demo.wx.channel.open.service.impl;
 
 import com.github.binarywang.demo.wx.channel.open.service.OpenMessageService;
+import com.github.binarywang.demo.wx.channel.open.service.WechatOpenService;
 import com.github.binarywang.demo.wx.channel.open.vo.DecodeMessage;
 import com.github.binarywang.demo.wx.channel.open.vo.MessageEventVo;
 import me.chanjar.weixin.channel.util.XmlUtils;
@@ -33,6 +34,9 @@ public class OpenMessageServiceImpl implements OpenMessageService {
 
     @Autowired
     private WxOpenConfigStorage wxOpenConfigStorage;
+
+    @Autowired
+    private WechatOpenService wechatOpenService;
 
     @Override
     public boolean checkSignature(String timestamp, String nonce, String signature) {
@@ -142,7 +146,7 @@ public class OpenMessageServiceImpl implements OpenMessageService {
                     );
                 } else if (StringUtils.startsWith(inMessage.getContent(), "QUERY_AUTH_CODE:")) {
                     String authorizationCode = inMessage.getContent().replace("QUERY_AUTH_CODE:", "");
-                    this.getQueryAuth(authorizationCode);
+                    wechatOpenService.getQueryAuth(authorizationCode);
                     String msg = authorizationCode + "_from_api";
                     WxMpKefuMessage kefuMessage = WxMpKefuMessage.TEXT().content(msg).toUser(inMessage.getFromUser())
                             .build();
@@ -160,13 +164,5 @@ public class OpenMessageServiceImpl implements OpenMessageService {
             logger.error("callback", e);
         }
         return out;
-    }
-
-    public void getQueryAuth(String authorizationCode) {
-        try {
-            WxOpenQueryAuthResult result = wxOpenService.getWxOpenComponentService().getQueryAuth(authorizationCode);
-        } catch (WxErrorException e) {
-            logger.error("获取调用凭据和授权信息失败, ", e);
-        }
     }
 }

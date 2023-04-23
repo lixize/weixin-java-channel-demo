@@ -8,9 +8,11 @@ import me.chanjar.weixin.open.api.impl.WxOpenInRedisTemplateConfigStorage;
 import me.chanjar.weixin.open.api.impl.WxOpenMessageRouter;
 import me.chanjar.weixin.open.api.impl.WxOpenServiceImpl;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
 /**
@@ -19,11 +21,31 @@ import org.springframework.data.redis.core.StringRedisTemplate;
  * @author <a href="https://github.com/lixize">Zeyes</a>
  */
 @Configuration
-
 public class WxOpenServiceConfiguration {
+    private static final Logger logger = LoggerFactory.getLogger(WxOpenServiceConfiguration.class);
 
     @Bean
-    @ConditionalOnBean(WxOpenConfigStorage.class)
+    @DependsOn(value = {"redisTemplate", "wxOpenProperties"})
+    public WxOpenConfigStorage wxOpenConfigStorage(StringRedisTemplate redisTemplate, WxOpenProperties properties) {
+        WxOpenInMemoryConfigStorage config = new WxOpenInRedisTemplateConfigStorage(redisTemplate, "wx:open:");
+
+        String componentAppId = StringUtils.trimToNull(properties.getComponentAppId());
+        String componentAppSecret = StringUtils.trimToNull(properties.getComponentSecret());
+        String componentToken = StringUtils.trimToNull(properties.getComponentToken());
+        String componentAesKey = StringUtils.trimToNull(properties.getComponentAesKey());
+        if (StringUtils.isAnyBlank(componentAppId, componentAppSecret, componentToken, componentAesKey)) {
+            logger.error("配置参数不完整, {}/{}/{}/{}", componentAppId, componentAppSecret, componentToken,
+                    componentAesKey);
+        }
+        config.setWxOpenInfo(componentAppId, componentAppSecret, componentToken, componentAesKey);
+
+        config.setRetrySleepMillis(1000);
+        config.setMaxRetryTimes(5);
+
+        return config;
+    }
+
+    @Bean
     public WxOpenService wxOpenService(WxOpenConfigStorage wxOpenConfigStorage) {
         WxOpenService wxOpenService = new WxOpenServiceImpl();
         wxOpenService.setWxOpenConfigStorage(wxOpenConfigStorage);
@@ -40,19 +62,5 @@ public class WxOpenServiceConfiguration {
         return wxOpenService.getWxOpenComponentService();
     }
 
-    @Bean
-    public WxOpenConfigStorage wxOpenConfigStorage(StringRedisTemplate redisTemplate, WxOpenProperties properties) {
-        WxOpenInMemoryConfigStorage config = new WxOpenInRedisTemplateConfigStorage(redisTemplate, "wx:open:");
 
-        String componentAppId = StringUtils.trimToNull(properties.getComponentAppId());
-        String componentAppSecret = StringUtils.trimToNull(properties.getComponentSecret());
-        String componentToken = StringUtils.trimToNull(properties.getComponentToken());
-        String componentAesKey = StringUtils.trimToNull(properties.getComponentAesKey());
-        config.setWxOpenInfo(componentAppId, componentAppSecret, componentToken, componentAesKey);
-
-        config.setRetrySleepMillis(1000);
-        config.setMaxRetryTimes(5);
-
-        return config;
-    }
 }

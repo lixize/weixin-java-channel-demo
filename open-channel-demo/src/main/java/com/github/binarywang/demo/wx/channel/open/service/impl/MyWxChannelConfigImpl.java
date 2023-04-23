@@ -13,6 +13,7 @@ import me.chanjar.weixin.open.api.WxOpenService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Service;
 
 /**
@@ -21,6 +22,7 @@ import org.springframework.stereotype.Service;
  * @author <a href="https://github.com/lixize">Zeyes</a>
  */
 @Service("wxChannelConfig")
+@DependsOn(value = {"wxChannelProperties", "wxOpenConfigStorage", "wxOpenService"})
 public class MyWxChannelConfigImpl extends WxChannelDefaultConfigImpl implements WxChannelConfig {
     private static final Logger logger = LoggerFactory.getLogger(MyWxChannelConfigImpl.class);
 
@@ -28,8 +30,8 @@ public class MyWxChannelConfigImpl extends WxChannelDefaultConfigImpl implements
 
     private WxOpenConfigStorage wxOpenConfigStorage;
 
-    public MyWxChannelConfigImpl(WxOpenService wxOpenService, WxChannelProperties properties,
-            WxOpenConfigStorage wxOpenConfigStorage) {
+    public MyWxChannelConfigImpl(WxChannelProperties properties, WxOpenConfigStorage wxOpenConfigStorage,
+            WxOpenService wxOpenService) {
         this.setAppid(StringUtils.trimToNull(properties.getAppid()));
         this.setRetrySleepMillis(1000);
         this.setMaxRetryTimes(5);

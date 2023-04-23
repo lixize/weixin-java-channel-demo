@@ -29,7 +29,6 @@ public class ChannelDemoController {
      */
     @GetMapping("/shopInfo")
     public Result<ShopInfoVo> getShopInfo() {
-        XmlUtils.decode("<xml></xml>", ShopInfoVo.class);
         return Result.success(channelApiService.getShopInfo());
     }
 }

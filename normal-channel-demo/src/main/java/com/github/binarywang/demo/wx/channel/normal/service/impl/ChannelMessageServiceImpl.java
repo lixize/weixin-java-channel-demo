@@ -71,7 +71,7 @@ public class ChannelMessageServiceImpl extends BaseWxChannelMessageServiceImpl i
         WxChannelMessage message = isJson ? JsonUtils.decode(requestBody, WxChannelMessage.class) :
                 XmlUtils.decode(requestBody, WxChannelMessage.class);
         String appId = wxChannelConfig.getAppid();
-        result = this.route(message, appId, encryptType, wxChannelService);
+        result = this.route(message, requestBody, appId, wxChannelService);
         if (result instanceof String) {
             return (String) result;
         } else if (result != null) {

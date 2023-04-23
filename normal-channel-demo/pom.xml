@@ -30,12 +30,6 @@
             <version>${wxjava.version}</version>
         </dependency>
 
-        <!-- 消息处理必须 -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.dataformat</groupId>
-            <artifactId>jackson-dataformat-xml</artifactId>
-        </dependency>
-
         <!--Redis-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

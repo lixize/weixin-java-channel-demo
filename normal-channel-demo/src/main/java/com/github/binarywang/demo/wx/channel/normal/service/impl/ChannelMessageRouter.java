@@ -11,6 +11,7 @@ public class ChannelMessageRouter extends WxChannelMessageRouter {
 
     public ChannelMessageRouter() {
         super();
+        this.setMessageDuplicateChecker(new MyMessageDuplicateChecker());
     }
 
 }
