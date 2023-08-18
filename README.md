@@ -8,7 +8,7 @@
 
 ### 模块介绍
 - **normal-channel-demo**: 不使用starter引入Maven开发Demo
-- **open-channel-demo**: 基于第三方平台授权的开发Demo
+- **open-channel-demo**: 基于第三方平台授权的开发Demo (**注: 官方似乎已经不支持这种授权方式了**)
 - **starter-channel-demo**: 使用starter引入Maven开发Demo
 
 ## 使用步骤：
@@ -25,7 +25,7 @@
         <version>2.13.0</version>
       </dependency>
 ```
-引入该模块，会影响Spring MVC的默认返回。
+引入该模块，**会影响Spring MVC的默认返回**。
 以下是一些关于这个的一些讨论：
 https://stackoverflow.com/questions/41036377/spring-mvc-changing-default-response-format-from-xml-to-json
 https://stackoverflow.com/questions/66752245/spring-5-jackson-dataformat-xml-forces-responsebody-with-xml
