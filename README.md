@@ -27,10 +27,10 @@
 ```
 引入该模块，**会影响Spring MVC的默认返回**。
 以下是一些关于这个的一些讨论：
-https://stackoverflow.com/questions/41036377/spring-mvc-changing-default-response-format-from-xml-to-json
-https://stackoverflow.com/questions/66752245/spring-5-jackson-dataformat-xml-forces-responsebody-with-xml
-https://stackoverflow.com/questions/57706610/how-to-set-default-messageconverter-to-json-with-jackson-dataformat-xml-added
-https://github.com/FasterXML/jackson-dataformat-xml/issues/530
+- https://stackoverflow.com/questions/41036377/spring-mvc-changing-default-response-format-from-xml-to-json
+- https://stackoverflow.com/questions/66752245/spring-5-jackson-dataformat-xml-forces-responsebody-with-xml
+- https://stackoverflow.com/questions/57706610/how-to-set-default-messageconverter-to-json-with-jackson-dataformat-xml-added
+- https://github.com/FasterXML/jackson-dataformat-xml/issues/530
 
 7. 需要redis支持，如果想用内存，可以修改相关实现。
 
