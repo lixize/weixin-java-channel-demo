@@ -17,5 +17,6 @@ wx:
     token: ""
     aesKey: ""
     msgDataFormat: JSON
+    useStableAccessToken: true
     config-storage:
       type: redistemplate

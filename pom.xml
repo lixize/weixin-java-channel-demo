@@ -24,7 +24,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <wxjava.version>4.5.4.B</wxjava.version>
+        <wxjava.version>4.6.7.B</wxjava.version>
     </properties>
 
     <dependencyManagement>

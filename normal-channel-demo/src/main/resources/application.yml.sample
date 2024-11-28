@@ -17,3 +17,4 @@ wx:
     token: ""
     aesKey: ""
     msgDataFormat: JSON
+    useStableAccessToken: true

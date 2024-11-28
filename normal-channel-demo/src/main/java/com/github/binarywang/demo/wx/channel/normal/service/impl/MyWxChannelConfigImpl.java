@@ -33,6 +33,7 @@ public class MyWxChannelConfigImpl extends WxChannelRedisConfigImpl implements W
         this.setToken(StringUtils.trimToNull(properties.getToken()));
         this.setAesKey(StringUtils.trimToNull(properties.getAesKey()));
         this.setMsgDataFormat(StringUtils.trimToNull(properties.getMsgDataFormat()));
+        this.setStableAccessToken(properties.isUseStableAccessToken());
 
         this.setRetrySleepMillis(1000);
         this.setMaxRetryTimes(5);

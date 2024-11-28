@@ -29,6 +29,9 @@ public class WxChannelProperties {
   /** 消息格式，XML或者JSON */
   private String msgDataFormat = "JSON";
 
+  /** 是否使用稳定的access_token */
+  private boolean useStableAccessToken = false;
+
   public WxChannelProperties() {
   }
 
@@ -52,6 +55,10 @@ public class WxChannelProperties {
     return msgDataFormat;
   }
 
+  public boolean isUseStableAccessToken() {
+    return useStableAccessToken;
+  }
+
   public void setAppid(String appid) {
     this.appid = appid;
   }
@@ -70,5 +77,9 @@ public class WxChannelProperties {
 
   public void setMsgDataFormat(String msgDataFormat) {
     this.msgDataFormat = msgDataFormat;
+  }
+
+  public void setUseStableAccessToken(boolean useStableAccessToken) {
+    this.useStableAccessToken = useStableAccessToken;
   }
 }
