@@ -1,4 +1,4 @@
-### 本Demo基于Spring Boot构建，实现视频号小店功能开发功能。
+### 本Demo基于Spring Boot构建，实现视频号/微信小店功能开发功能。
 
 #### 本项目为WxJava的Demo演示程序，更多信息请查阅：https://github.com/Wechat-Group/WxJava
 

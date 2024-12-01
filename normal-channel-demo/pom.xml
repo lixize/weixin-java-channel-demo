@@ -11,7 +11,7 @@
 
     <artifactId>normal-channel-demo</artifactId>
     <name>normal-channel-demo</name>
-    <description>正常接入的视频号小店Demo</description>
+    <description>正常接入的视频号/微信小店Demo</description>
 
     <properties>
 

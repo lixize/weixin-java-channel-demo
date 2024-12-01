@@ -14,7 +14,7 @@
     <packaging>pom</packaging>
 
     <name>weixin-java-channel-demo</name>
-    <description>WxJava视频号相关代码Demo</description>
+    <description>WxJava视频号/微信小店相关代码Demo</description>
 
     <modules>
         <module>starter-channel-demo</module>
